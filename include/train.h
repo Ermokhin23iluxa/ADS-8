@@ -3,10 +3,10 @@
 #define INCLUDE_TRAIN_H_
 
 class Train {
-private:
+ private:
   struct Cage {
     bool light;//lamp
-    Cage *next; 
+    Cage *next;
     Cage *prev;
   };
   int countOp;//счетчик шагов число переходов из вагона в вагон
