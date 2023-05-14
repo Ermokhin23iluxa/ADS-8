@@ -1,10 +1,11 @@
 // Copyright 2021 NNTU-CS
 #include "train.h"
 void Train::addCage(bool light) {
-  if (head == 0) {
+  if (!head) {
     Cage *item = new Cage;
     item->light = light;
-    head = tail = item;
+    head = item;
+    tail = item;
   } else {
     Cage *item = new Cage;
     item->light = light;
@@ -24,22 +25,20 @@ int Train::getLength() {
       elem = elem->next;
       ++countOp;
       ++helpCount;
-      if (elem->light == true) {
+      if (elem->light) {
         elem->light = false;
         break;
       }
     }
     size = helpCount;
-    while (helpCount != 0) {
+    while (helpCount) {
       elem = elem->prev;
-      --helpCount;
       ++countOp;
+      --helpCount;
     }
-    if (elem->light != false) {
+    if (!elem->light)
       return size;
-    }
   }
-  return 0;
 }
 int Train::getOpCount() {
   return countOp;
