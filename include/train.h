@@ -2,6 +2,7 @@
 #ifndef INCLUDE_TRAIN_H_
 #define INCLUDE_TRAIN_H_
 
+
 class Train {
  private:
   struct Cage {
@@ -13,6 +14,7 @@ class Train {
   Cage *head;//точка входа в поезд первый вагон
   Cage *tail;//последний добавленный
   int helpCount;
+
  public:
   Train() :countOp(0), head(nullptr), tail(nullptr), helpCount(0) {}
   void addCage(bool light);//добавить вагон с начальным состоянием лампочки
